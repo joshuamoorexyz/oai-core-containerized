@@ -897,5 +897,16 @@ LABEL support-nrf-fdqn="true"
 # expose ports
 EXPOSE 2152/udp 8805/udp
 
+# Copy the startup script
+COPY startservices.sh /usr/src/app/startservices.sh
+
+# Set the script as executable
+RUN chmod +x /usr/src/app/startservices.sh
+
+
+CMD ["/usr/src/app/startservices.sh"]
+
+
+
 
 
